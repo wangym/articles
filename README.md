@@ -1,2 +1,2 @@
 # articles
-Personal article repository
+Personal original article repository
