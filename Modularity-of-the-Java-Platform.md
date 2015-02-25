@@ -6,7 +6,7 @@
 - Natively Reusable: modules are a unit of intraprocess reuse  
 - Composable: modules are a unit of composition  
 - Stateless: modules are stateless (*running software from a module has a state)  
-- Testability: modules are a unit of testability.  
+- Testability: modules are a unit of testability  
 
 #Why modularity
 >"to tame complexity"  
@@ -15,9 +15,9 @@
 
 #Modularity Patterns  
 - Base Patterns  
-  Base patterns advise to design and manage relationships between modules, that you have to emphasize reusability at software module level, and that modules shall be cohesive and have a behavior that serves a singular purpose  
+  - Base patterns advise to design and manage relationships between modules, that you have to emphasize reusability at software module level, and that modules shall be cohesive and have a behavior that serves a singular purpose  
 - Dependency Patterns  
-  Dependency patterns teach you that there must be no cycles between modules, that should be organized in levels and in physical layers. And that a module should be independent from the runtime container and deployable independently from other modules  
+  - Dependency patterns teach you that there must be no cycles between modules, that should be organized in levels and in physical layers. And that a module should be independent from the runtime container and deployable independently from other modules  
 - Usability, Extensibility, Utility Patterns  
   - The modules shall have a public interface that is well known  
   - Modules are configured externally  
