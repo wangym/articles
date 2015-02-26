@@ -261,3 +261,7 @@ OSGi Services Summary
   - Subsystems (multi-bundle deployment entities)  
   - JavaEE integration (JTA, JNDI, JPA, JDBC, ...)  
   ... and more ...  
+
+####OSGi Resource
+[http://karaf.apache.org/](#http://karaf.apache.org/)  
+Apache Karaf is a small OSGi based runtime which provides a lightweight container onto which various components and applications can be deployed.  
