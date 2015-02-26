@@ -13,6 +13,18 @@
 
 >“Modularity is the best hope to reduce the costs of changes due to architectural decisions”  
 
+#Feature  
+- An autonomous unit of deployment  
+  - loose coupling  
+- A consistent and unique identity  
+  - module ID and version  
+- Easily identified and discovered requirements and dependencies  
+  - standard compile-time and deployment facilities and meta-information  
+- An open and understandable interface  
+  - communication contract  
+- Hidden implementation details  
+  - encapsulation  
+
 #Modularity Patterns  
 - Base Patterns  
   - Base patterns advise to design and manage relationships between modules, that you have to emphasize reusability at software module level, and that modules shall be cohesive and have a behavior that serves a singular purpose  
@@ -27,13 +39,6 @@
   - Separate abstractions from the classes that implement them in separate modules, so to help eliminate module relationships  
   - Perform a levelized build, repeatable build of the modules. This has positive effect on the lifecycle of software development as a levelized build integrate testing that require to integrate early and often, which guarantees a system health always in a good status  
   - Modules should have a test module  
-
-#Feature  
-- An autonomous unit of deployment (loose coupling)  
-- A consistent and unique identity (module ID and version)  
-- Easily identified and discovered requirements and dependencies (standard compile-time and deployment facilities and meta-information)  
-- An open and understandable interface (communication contract)  
-- Hidden implementation details (encapsulation)  
 
 #Jigsaw  
 ####Module  
