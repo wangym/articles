@@ -1,4 +1,4 @@
-在Java开发阶段，因为追求架构规范和遵循设计原则，所以要用private和protected修饰符去定义类的成员方法、变量、常量，这使得代码具封装性、内聚性等，但在测试阶也会造成一定的不便。通过Java的反射机制，便能很好地解决该问题。
+在Java开发阶段，因为追求架构规范和遵循设计原则，所以要用private和protected修饰符去定义类的成员方法、变量、常量，这使得代码具封装性、内聚性等，但在测试阶段也会造成一定的不便。通过Java的反射机制，便能很好地解决该问题。
 
 ####ReflectUtil.java
 <pre><code>
@@ -65,39 +65,22 @@ public class ReflectUtilTest {
     public void testInvokeMethod() throws Exception {
         String whatIsYourName = null;
         String howOldAreYou = null;
-        String whereAreYouFrom = null;
         String name = "yumin";
         int age = 18;
-        String country = null;
         Person person = new Person();
 
-        if (ReflectUtil.setFieldValue(person, "name", name)) {
-            whatIsYourName = (String) ReflectUtil.invokeMethod(person, "whatIsYourName", null, null);
-            howOldAreYou = (String) ReflectUtil.invokeMethod(person, "howOldAreYou", new Class[]{int.class}, new Object[]{age});
-            country = (String) ReflectUtil.getFieldValue(person, "country");
-            whereAreYouFrom = (String) ReflectUtil.invokeMethod(person, "whereAreYouFrom", null, null);
-        }
+        whatIsYourName = (String) ReflectUtil.invokeMethod(person, "whatIsYourName", null, null);
+        howOldAreYou = (String) ReflectUtil.invokeMethod(person, "howOldAreYou", new Class[]{int.class}, new Object[]{age});
 
         Assert.assertEquals(Person.whatIsYourName + name, whatIsYourName);
         Assert.assertEquals(Person.howOldAreYou + age, howOldAreYou);
-        Assert.assertEquals(Person.whereAreYouFrom + country, whereAreYouFrom);
-    }
-
-    /**
-     * 测试用类
-     */
-    enum SexEnum {
-        MALE, FEMALE
     }
 
     public class Person {
 
         public static final String whatIsYourName = "My name is ";
         public static final String howOldAreYou = "I'm ";
-        public static final String whereAreYouFrom = "I'm from ";
-        private String name; // 姓名
-        private SexEnum sex;
-        protected String country = "china"; // 国家
+        private String name = "yumin"; // 姓名
 
         public void setName(String name) {
             this.name = name;
@@ -110,15 +93,11 @@ public class ReflectUtilTest {
         private String howOldAreYou(int age) {
             return howOldAreYou + age;
         }
-
-        private String whereAreYouFrom() {
-            return whereAreYouFrom + country;
-        }
     }
 }
 
 </code></pre>
 
-可以看到通过Java反射机制，实现了对被private和protected所修饰方法和属性的调用、取值、传值等读写操作，既没破坏原始代码也能完成私有成员的单元测试。需要特别注意的是，建议仅运用在测试场景下，切莫图方便在发行的代码逻辑中通过反射调用类的私有成员，这样便会破坏原有类的设计，产生不可预料的运行结果及污染了体系结构，造成后续难以维护。
+可以看到通过Java反射机制，实现了对被private和protected所修饰方法和属性的调用、取值、传值等读写操作，未破坏原始代码也能完成对私有成员的单元测试。需要特别注意，建议仅运用在测试场景，切莫图方便在发行的代码逻辑中通过反射调用类私有成员，这样便会破坏原有的类设计，产生不可预料的运行结果及污染体系结构，造成后续难以维护。
 
 更详细代码请参见：https://github.com/wangym/java-common/
