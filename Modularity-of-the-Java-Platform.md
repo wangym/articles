@@ -160,7 +160,6 @@ OSGi Modularity in Practice
 <pre><code>
 package org.acme.package1;
 import org.acme.package2.MyClass;
-JavaOne Slide Template Title
 ...
 MyClass ax = new MyClass();
 ax.foo()
