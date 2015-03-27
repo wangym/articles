@@ -13,7 +13,7 @@ git clone git@github.com:wangym/zxing-client-android.git
  
 #2、调用扫码：
 调用zxing-lib库的扫码界面  
-<pre><code>
+```Java
 /**
  * @author yumin
  */
@@ -71,12 +71,12 @@ public class MainActivity extends Activity {
         startActivityForResult(intent, REQUEST_CODE);
     }
 }
-</code></pre>
+```
 调用CaptureActivity即可呼出扫码界面，支持设定个性参数，当扫码成功后返回到CaptureResultActivity  
  
 #3、获取结果：
 获取二维码扫码之后的结果  
-<pre><code>
+```Java
 /**
  * @author yumin
  */
@@ -114,7 +114,7 @@ public class CaptureResultActivity extends Activity {
         }
     }
 }
-</code></pre>
+```
 二维码扫码成功后调出CaptureResultActivity，上例将结果直接显示，本质上是通过Intent获取扫码结果的。  
  
 完整示例见zxing-lib-example。但请不要局限于示例中的使用方式，比如在二维码扫码成功后，并非只能通过一个Activity才能取到扫码的结果。请结合具体场景灵活运用。  
