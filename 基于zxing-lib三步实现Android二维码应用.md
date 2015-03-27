@@ -8,7 +8,7 @@
  
 #1、环境准备：
 检出zxing-lib项目并导入IDE  
-git clone git@github.com:wangym/zxing-client-android.git  
+<pre>git clone git@github.com:wangym/zxing-client-android.git</pre>  
 导入IDE后将zxing-lib设为Android library project，并以library方式引入你正在开发的Android代码工程内  
  
 #2、调用扫码：
