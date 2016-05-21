@@ -29,8 +29,8 @@ git checkout -b master origin/master
 Step 2. Review the changes locally  
 
 Step 3. Merge the branch and fix any conflicts that come up  
-git checkout {branch}  
+git checkout $feature_name  
 git merge --no-ff master  
 
 Step 4. Push the result of the merge to GitLab  
-git push origin {branch}  
+git push origin $feature_name  
